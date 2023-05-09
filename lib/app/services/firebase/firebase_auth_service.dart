@@ -1,5 +1,5 @@
 import 'package:cabeleleila/app/services/auth_service.dart';
-import 'package:cabeleleila/app/services/firebase_auth_exception.dart';
+import 'package:cabeleleila/app/services/firebase/firebase_auth_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cabeleleila/app/common/models/user_model.dart';
 
