@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "880842692933",
+    "project_id": "cabeleleila-flutter",
+    "storage_bucket": "cabeleleila-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880842692933:android:ca22a6f1165924b0b2462c",
+        "android_client_info": {
+          "package_name": "com.example.cabeleleila"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880842692933-1adnaqltpal2kpgauhsrbcipkv0alpbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGf52SNOL66F1UhxO-CDMcNnBAzdxvDxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880842692933-1adnaqltpal2kpgauhsrbcipkv0alpbn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "880842692933-9da4pncc4tbpfkk66a6jno4ueuhp7n9q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cabeleleila.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
