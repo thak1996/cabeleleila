@@ -6,18 +6,20 @@ import 'package:cabeleleila/app/view/authentication/sign_up/sign_up_controller.d
 import 'package:cabeleleila/app/view/authentication/splash/splash_controller.dart';
 import 'package:get_it/get_it.dart';
 
-
 final locator = GetIt.instance;
 
 void setupDependencies() {
   locator.registerLazySingleton<AuthService>(() => FirebaseAuthService());
 
   locator.registerFactory<SplashController>(
-      () => SplashController(const SecureStorage()));
+    () => SplashController(const SecureStorage()),
+  );
 
   locator.registerFactory<SignInController>(
-      () => SignInController(locator.get<AuthService>()));
+    () => SignInController(locator.get<AuthService>()),
+  );
 
   locator.registerFactory<SignUpController>(
-      () => SignUpController(locator.get<AuthService>()));
+    () => SignUpController(locator.get<AuthService>(), const SecureStorage()),
+  );
 }

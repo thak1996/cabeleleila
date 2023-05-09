@@ -39,6 +39,8 @@ dependencies:
   firebase_core: ^2.11.0
   firebase_auth: ^4.5.0
   flutter_secure_storage: ^7.0.0
+  mocktail: ^0.3.0
+  table_calendar: ^3.0.1
 
 dev_dependencies:
   flutter_test:
