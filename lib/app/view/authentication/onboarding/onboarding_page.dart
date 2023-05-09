@@ -53,6 +53,7 @@ Text _textTitle() {
     'Ser Cabeleireiro é trazer para fora a \nBeleza que existe dentro de você.',
     style: AppTextStyles.mediumText20.apply(
       color: AppColors.pinkOne,
+      fontStyle: FontStyle.italic,
     ),
   );
 }

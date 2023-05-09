@@ -7,14 +7,9 @@ class CalendarPage extends StatefulWidget {
   State<CalendarPage> createState() => _CalendarPageState();
 }
 
-class _CalendarPageState extends State<CalendarPage>
-    with AutomaticKeepAliveClientMixin<CalendarPage> {
-  @override
-  bool get wantKeepAlive => true;
-
+class _CalendarPageState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return const Scaffold(
       body: Center(
         child: Text("Calendar"),

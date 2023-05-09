@@ -1,3 +1,5 @@
+import 'package:cabeleleila/app/common/constants/routes.dart';
+import 'package:cabeleleila/app/services/secure_storage.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,9 +17,26 @@ class _ProfilePageState extends State<ProfilePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return const Scaffold(
+    const secureStorage = SecureStorage();
+    return Scaffold(
       body: Center(
-        child: Text("Profile"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('profile'),
+            ElevatedButton(
+              onPressed: () {
+                secureStorage.deleteOne(key: "CURRENT_USER").then(
+                      (_) => Navigator.popAndPushNamed(
+                        context,
+                        NamedRoute.initial,
+                      ),
+                    );
+              },
+              child: const Text('Logout'),
+            )
+          ],
+        ),
       ),
     );
   }
