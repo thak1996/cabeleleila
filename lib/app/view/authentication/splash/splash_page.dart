@@ -1,5 +1,4 @@
 import 'package:cabeleleila/app/common/constants/app_colors.dart';
-import 'package:cabeleleila/app/common/constants/app_text_styles.dart';
 import 'package:cabeleleila/app/common/constants/routes.dart';
 import 'package:cabeleleila/app/common/widget/custom_circular_progress.indicator.dart';
 import 'package:cabeleleila/app/view/authentication/splash/splash_controller.dart';
