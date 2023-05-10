@@ -14,9 +14,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  final User user = FirebaseAuth.instance.currentUser!;
   SecureStorage secureStorage = const SecureStorage();
-
+  final User user = FirebaseAuth.instance.currentUser!;
   bool get wantKeepAlive => true;
 
   @override

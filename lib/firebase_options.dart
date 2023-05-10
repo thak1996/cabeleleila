@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:880842692933:android:ca22a6f1165924b0b2462c',
     messagingSenderId: '880842692933',
     projectId: 'cabeleleila-flutter',
+    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
     storageBucket: 'cabeleleila-flutter.appspot.com',
   );
 
@@ -62,6 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:880842692933:ios:1a2bdb387b236186b2462c',
     messagingSenderId: '880842692933',
     projectId: 'cabeleleila-flutter',
+    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
     storageBucket: 'cabeleleila-flutter.appspot.com',
     iosClientId: '880842692933-oi4jeiu9igkhk6pusr4g8sbaksprvt13.apps.googleusercontent.com',
     iosBundleId: 'com.example.cabeleleila',
