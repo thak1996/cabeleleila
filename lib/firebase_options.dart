@@ -15,26 +15,6 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDGf52SNOL66F1UhxO-CDMcNnBAzdxvDxw',
-    appId: '1:880842692933:android:ca22a6f1165924b0b2462c',
-    messagingSenderId: '880842692933',
-    projectId: 'cabeleleila-flutter',
-    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
-    storageBucket: 'cabeleleila-flutter.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCAirdOpkCEitteR26wK7gH2wk_3XZSTk0',
-    appId: '1:880842692933:ios:1a2bdb387b236186b2462c',
-    messagingSenderId: '880842692933',
-    projectId: 'cabeleleila-flutter',
-    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
-    storageBucket: 'cabeleleila-flutter.appspot.com',
-    iosClientId: '880842692933-oi4jeiu9igkhk6pusr4g8sbaksprvt13.apps.googleusercontent.com',
-    iosBundleId: 'com.example.cabeleleila',
-  );
-
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       throw UnsupportedError(
@@ -68,4 +48,24 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyDGf52SNOL66F1UhxO-CDMcNnBAzdxvDxw',
+    appId: '1:880842692933:android:ca22a6f1165924b0b2462c',
+    messagingSenderId: '880842692933',
+    projectId: 'cabeleleila-flutter',
+    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
+    storageBucket: 'cabeleleila-flutter.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCAirdOpkCEitteR26wK7gH2wk_3XZSTk0',
+    appId: '1:880842692933:ios:1a2bdb387b236186b2462c',
+    messagingSenderId: '880842692933',
+    projectId: 'cabeleleila-flutter',
+    databaseURL: 'https://cabeleleila-flutter-default-rtdb.firebaseio.com',
+    storageBucket: 'cabeleleila-flutter.appspot.com',
+    iosClientId: '880842692933-oi4jeiu9igkhk6pusr4g8sbaksprvt13.apps.googleusercontent.com',
+    iosBundleId: 'com.example.cabeleleila',
+  );
 }

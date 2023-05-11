@@ -1,64 +1,75 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 
 class BookmarksModel {
+  String? id;
+  DateTime? dateTime;
+  String? serviceSalon;
+  String? name;
   BookmarksModel({
-    required this.id,
-    required this.date,
-    required this.time,
-    this.isConfirmed = false,
+    this.id,
+    this.dateTime,
+    this.serviceSalon,
+    this.name,
   });
+  
 
-  factory BookmarksModel.fromJson(String source) =>
-      BookmarksModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  factory BookmarksModel.fromMap(Map<String, dynamic> map) {
+  BookmarksModel copyWith({
+    String? id,
+    DateTime? dateTime,
+    String? serviceSalon,
+    String? name,
+  }) {
     return BookmarksModel(
-      id: map['id'] as String,
-      date: DateTime.fromMillisecondsSinceEpoch(map['dateTime'] as int),
-      time: TimeOfDay(hour: map['hour'], minute: map['minute']),
-      isConfirmed: map['isConfirmed'] as bool,
+      id: id ?? this.id,
+      dateTime: dateTime ?? this.dateTime,
+      serviceSalon: serviceSalon ?? this.serviceSalon,
+      name: name ?? this.name,
     );
   }
 
-  final DateTime date;
-  final String id;
-  final bool isConfirmed;
-  final TimeOfDay time;
-
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'clientName': id,
-      'dateTime': date.toString(),
-      'time': '${time.hour}:${time.minute}',
-      'isConfirmed': isConfirmed,
+      'id': id,
+      'dateTime': dateTime?.millisecondsSinceEpoch,
+      'serviceSalon': serviceSalon,
+      'name': name,
     };
+  }
+
+  factory BookmarksModel.fromMap(Map<String, dynamic> map) {
+    return BookmarksModel(
+      id: map['id'] != null ? map['id'] as String : null,
+      dateTime: map['dateTime'] != null ? DateTime.fromMillisecondsSinceEpoch(map['dateTime'] as int) : null,
+      serviceSalon: map['serviceSalon'] != null ? map['serviceSalon'] as String : null,
+      name: map['name'] != null ? map['name'] as String : null,
+    );
   }
 
   String toJson() => json.encode(toMap());
 
-  TimeOfDay fromString(String time) {
-    int hh = 0;
-    if (time.endsWith('PM')) hh = 12;
-    time = time.split(' ')[0];
-    return TimeOfDay(
-      hour: hh + int.parse(time.split(":")[0]) % 24,
-      minute: int.parse(time.split(":")[1]) % 60,
-    );
+  factory BookmarksModel.fromJson(String source) => BookmarksModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'BookmarksModel(id: $id, dateTime: $dateTime, serviceSalon: $serviceSalon, name: $name)';
   }
 
-  // Método para converter um objeto TimeOfDay em uma String
-  String timeOfDayToString(TimeOfDay time) {
-    final hour = time.hour.toString().padLeft(2, '0');
-    final minute = time.minute.toString().padLeft(2, '0');
-    return '$hour:$minute';
+  @override
+  bool operator ==(covariant BookmarksModel other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other.id == id &&
+      other.dateTime == dateTime &&
+      other.serviceSalon == serviceSalon &&
+      other.name == name;
   }
 
-  // Método para converter uma String em um objeto TimeOfDay
-  TimeOfDay stringToTimeOfDay(String value) {
-    final parts = value.split(':');
-    final hour = int.parse(parts[0]);
-    final minute = int.parse(parts[1]);
-    return TimeOfDay(hour: hour, minute: minute);
+  @override
+  int get hashCode {
+    return id.hashCode ^
+      dateTime.hashCode ^
+      serviceSalon.hashCode ^
+      name.hashCode;
   }
 }

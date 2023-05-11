@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:cabeleleila/app/common/utils/hex.dart';
+import 'package:cabeleleila/app/common/utils/conversion_hex.dart';
 
 class AppColors {
   AppColors._();
