@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:cabeleleila/app/common/constants/app_text_styles.dart';
 import 'package:cabeleleila/app/common/constants/routes.dart';
@@ -14,6 +12,7 @@ import 'package:cabeleleila/app/locator.dart';
 import 'package:cabeleleila/app/view/authentication/sign_up/sign_up_controller.dart';
 import 'package:cabeleleila/app/view/authentication/sign_up/sign_up_state.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

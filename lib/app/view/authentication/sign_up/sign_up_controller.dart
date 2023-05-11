@@ -4,8 +4,8 @@ import 'package:cabeleleila/app/view/authentication/sign_up/sign_up_state.dart';
 import 'package:flutter/material.dart';
 
 class SignUpController extends ChangeNotifier {
-  final AuthService _service;
   final SecureStorage _secureStorage;
+  final AuthService _service;
 
   SignUpController(this._service, this._secureStorage);
 

@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:cabeleleila/app/common/widget/custom_bottom_app_bar.dart';
-import 'package:cabeleleila/app/view/home/appbar_pages/calendar/calendar_page.dart';
+import 'package:cabeleleila/app/view/home/appbar_pages/bookmarks/bookmarks_page.dart';
 import 'package:cabeleleila/app/view/home/appbar_pages/profile/profile_page.dart';
 import 'package:cabeleleila/app/view/home/home_page.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer';
 
 class HomePageView extends StatefulWidget {
   const HomePageView({super.key});
@@ -33,7 +32,7 @@ class _HomePageViewState extends State<HomePageView> {
         controller: pageController,
         children: const [
           HomePage(),
-          CalendarPage(),
+          BookMarksPage(),
           ProfilePage(),
         ],
       ),

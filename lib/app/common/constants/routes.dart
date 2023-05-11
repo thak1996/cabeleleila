@@ -7,5 +7,5 @@ class NamedRoute {
   static const String signUp = "/sign_up/";
   static const String signIn = "/sign_in/";
   static const String profile = "/profile/";
-  static const String calendar = "/calendar/";
+  static const String bookmarks = "/bookmarks/";
 }
