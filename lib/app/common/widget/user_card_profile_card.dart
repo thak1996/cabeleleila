@@ -1,5 +1,6 @@
 import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:cabeleleila/app/common/constants/app_text_styles.dart';
+import 'package:cabeleleila/app/common/utils/conversion_custons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -7,9 +8,6 @@ class UserCard extends StatelessWidget {
   const UserCard({Key? key, required this.user}) : super(key: key);
 
   final User user;
-
-  String _capitalize(String s) =>
-      s.isNotEmpty ? '${s[0].toUpperCase()}${s.substring(1)}' : '';
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,7 @@ class UserCard extends StatelessWidget {
               children: [
                 user.displayName != null
                     ? Text(
-                        "Nome: ${_capitalize(user.displayName!)}",
+                        "Nome: ${capitalizeOne(user.displayName!)}",
                         style: AppTextStyles.mediumText20.apply(
                           color: AppColors.darkGrey,
                         ),

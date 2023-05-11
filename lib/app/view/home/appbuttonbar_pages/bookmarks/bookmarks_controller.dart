@@ -1,11 +1,12 @@
 import 'package:cabeleleila/app/common/utils/conversion_custons.dart';
-import 'package:cabeleleila/app/services/homeService.dart';
+import 'package:cabeleleila/app/services/firebase/firebase_cloud_service.dart';
+import 'package:cabeleleila/app/services/home_service.dart';
 import 'package:cabeleleila/app/view/home/appbuttonbar_pages/bookmarks/bookmarks_state.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class BookmarksController extends ChangeNotifier {
-  BookmarksController(this.homeService);
+  BookmarksController(this.homeService, FirebaseCloudService firebaseCloudService,);
 
   final ValueNotifier<String> dateValueNotifier = ValueNotifier(
     DateTimeHelper().getData(DateTime.now()),
@@ -14,6 +15,7 @@ class BookmarksController extends ChangeNotifier {
   final ValueNotifier<String> dropValueNotifier =
       ValueNotifier('Corte de Cabelo');
 
+  final HomeService homeService;
   final List<String> options = [
     'Corte de Cabelo',
     'Coloração de Cabelo',
@@ -33,7 +35,6 @@ class BookmarksController extends ChangeNotifier {
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedTime = TimeOfDay.now();
   BookmarksState _state = BookmarksStateInitial();
-  final HomeService homeService;
 
   BookmarksState get state => _state;
 
@@ -66,6 +67,7 @@ class BookmarksController extends ChangeNotifier {
       DateTime(date.year, date.month, date.day, time.hour, time.minute);
 
   DateTime getSelectedDate() => _selectedDate;
+
   TimeOfDay getSelectedTime() => _selectedTime;
 
   Future<void> postCloud({

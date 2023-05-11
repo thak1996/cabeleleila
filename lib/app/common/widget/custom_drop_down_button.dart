@@ -2,16 +2,16 @@ import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomDropdownButton extends StatelessWidget {
-  final String selectedOption;
-  final List<String> options;
-  final void Function(String?)? onChanged;
-
   const CustomDropdownButton({
     super.key,
     required this.selectedOption,
     required this.options,
     required this.onChanged,
   });
+
+  final void Function(String?)? onChanged;
+  final List<String> options;
+  final String selectedOption;
 
   @override
   Widget build(BuildContext context) {

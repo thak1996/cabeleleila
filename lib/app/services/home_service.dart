@@ -8,10 +8,7 @@ abstract class HomeService {
     required String name,
   });
 
-  Future<BookmarksModel> getCloud({
+  Future<List<BookmarksModel>> getClouds({
     required String id,
-    required DateTime dateTime,
-    required String serviceSalon,
-    required String name,
   });
 }

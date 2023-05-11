@@ -33,6 +33,15 @@ class FirebaseAuthService implements AuthService {
   }
 
   @override
+  Future<void> signOut() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
   Future<UserModel> signUp({
     String? name,
     required String email,
@@ -55,15 +64,6 @@ class FirebaseAuthService implements AuthService {
       }
     } on FirebaseAuthException catch (e) {
       throw CustomFirebaseAuthException.fromFirebaseAuthException(e);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  @override
-  Future<void> signOut() async {
-    try {
-      await _auth.signOut();
     } catch (e) {
       rethrow;
     }

@@ -1,5 +1,6 @@
 class CustomFirebaseAuthException implements Exception {
   CustomFirebaseAuthException(this.message);
+
   final String message;
 
   @override
