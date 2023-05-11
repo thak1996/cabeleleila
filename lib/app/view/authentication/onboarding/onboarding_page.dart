@@ -50,9 +50,10 @@ Container _infosOnboarding(BuildContext context) {
 Text _textTitle() {
   return Text(
     textAlign: TextAlign.center,
-    'Ser Cabeleireiro é trazer para fora a \nBeleza que existe dentro de você',
+    'Ser Cabeleireiro é trazer para fora a \nBeleza que existe dentro de você.',
     style: AppTextStyles.mediumText20.apply(
       color: AppColors.pinkOne,
+      fontStyle: FontStyle.italic,
     ),
   );
 }
@@ -60,7 +61,7 @@ Text _textTitle() {
 PrimaryButton _buttonOnboarding(context) {
   return PrimaryButton(
     padding: const EdgeInsets.only(top: 40, bottom: 10),
-    text: 'Comece aqui!',
+    text: 'Criar Conta',
     onPressed: () => Navigator.pushNamed(context, NamedRoute.signUp),
   );
 }
@@ -74,7 +75,7 @@ MultTextButton _textButton(context) {
         style: AppTextStyles.smallText.apply(color: AppColors.grey),
       ),
       Text(
-        'Login',
+        'Faça Login!',
         style: AppTextStyles.smallText.apply(color: AppColors.pinkOne),
       ),
     ],

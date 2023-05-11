@@ -1,4 +1,5 @@
 import 'package:cabeleleila/app/services/auth_service.dart';
+import 'package:cabeleleila/app/services/firebase/firebase_auth_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cabeleleila/app/common/models/user_model.dart';
 
@@ -25,7 +26,16 @@ class FirebaseAuthService implements AuthService {
         throw Exception();
       }
     } on FirebaseAuthException catch (e) {
-      throw e.message ?? "null";
+      throw CustomFirebaseAuthException.fromFirebaseAuthException(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<void> signOut() async {
+    try {
+      await _auth.signOut();
     } catch (e) {
       rethrow;
     }
@@ -53,16 +63,7 @@ class FirebaseAuthService implements AuthService {
         throw Exception();
       }
     } on FirebaseAuthException catch (e) {
-      throw e.message ?? "null";
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  @override
-  Future<void> signOut() async {
-    try {
-      await _auth.signOut();
+      throw CustomFirebaseAuthException.fromFirebaseAuthException(e);
     } catch (e) {
       rethrow;
     }

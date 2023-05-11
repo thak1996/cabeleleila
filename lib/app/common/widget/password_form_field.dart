@@ -15,15 +15,16 @@ class PasswordFormField extends StatefulWidget {
     this.helperText,
     this.keyboardType,
   }) : super(key: key);
+
   final TextEditingController? controller;
-  final EdgeInsets? padding;
-  final String? hintText;
-  final String? labelText;
-  final TextInputType? textInputType;
-  final TextInputType? keyboardType;
-  final TextInputAction? textInputAction;
-  final FormFieldValidator<String>? validator;
   final String? helperText;
+  final String? hintText;
+  final TextInputType? keyboardType;
+  final String? labelText;
+  final EdgeInsets? padding;
+  final TextInputAction? textInputAction;
+  final TextInputType? textInputType;
+  final FormFieldValidator<String>? validator;
 
   @override
   State<PasswordFormField> createState() => _PasswordFormFieldState();
@@ -48,7 +49,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
         borderRadius: BorderRadius.circular(23),
         child: Icon(
           isHidden ? Icons.visibility : Icons.visibility_off,
-          color: AppColors.pinkOne,
+          color: AppColors.pinkLogo,
         ),
       ),
     );

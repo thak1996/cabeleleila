@@ -7,7 +7,7 @@ class SignUpStateLoading extends SignUpState {}
 class SignUpStateSuccess extends SignUpState {}
 
 class SignUpStateError extends SignUpState {
-  final String message;
-
   SignUpStateError(this.message);
+
+  final String message;
 }

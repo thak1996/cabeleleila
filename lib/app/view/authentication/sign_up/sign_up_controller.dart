@@ -4,25 +4,19 @@ import 'package:cabeleleila/app/view/authentication/sign_up/sign_up_state.dart';
 import 'package:flutter/material.dart';
 
 class SignUpController extends ChangeNotifier {
+  SignUpController(this._service, this._secureStorage);
+
+  final SecureStorage _secureStorage;
   final AuthService _service;
-
-  SignUpController(this._service);
-
   SignUpState _state = SignUpStateInitial();
 
   SignUpState get state => _state;
-
-  void _changeState(SignUpState newState) {
-    _state = newState;
-    notifyListeners();
-  }
 
   Future<void> signUp({
     required String name,
     required String email,
     required String password,
   }) async {
-    const secureStorage = SecureStorage();
     _changeState(SignUpStateLoading());
     try {
       final user = await _service.signUp(
@@ -31,7 +25,7 @@ class SignUpController extends ChangeNotifier {
         password: password,
       );
       if (user.id != null) {
-        await secureStorage.write(
+        await _secureStorage.write(
           key: "CURRENT_USER",
           value: user.toJson(),
         );
@@ -44,4 +38,8 @@ class SignUpController extends ChangeNotifier {
     }
   }
 
+  void _changeState(SignUpState newState) {
+    _state = newState;
+    notifyListeners();
+  }
 }

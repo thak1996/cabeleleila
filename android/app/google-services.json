@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "880842692933",
+    "firebase_url": "https://cabeleleila-flutter-default-rtdb.firebaseio.com",
     "project_id": "cabeleleila-flutter",
     "storage_bucket": "cabeleleila-flutter.appspot.com"
   },

@@ -1,6 +1,6 @@
 import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:cabeleleila/app/common/constants/routes.dart';
-import 'package:cabeleleila/app/common/widget/custom_circular_progress.indicator.dart';
+import 'package:cabeleleila/app/common/widget/custom_circular_progress_indicator.dart';
 import 'package:cabeleleila/app/view/authentication/splash/splash_controller.dart';
 import 'package:cabeleleila/app/view/authentication/splash/splash_state.dart';
 import 'package:cabeleleila/app/locator.dart';
@@ -49,7 +49,7 @@ class _SplashPageState extends State<SplashPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: AppColors.pinkTwoGradient,
+            colors: AppColors.pinkThreGradient,
           ),
         ),
         child: Column(

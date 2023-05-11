@@ -28,34 +28,35 @@ class CustomTextFormField extends StatefulWidget {
     this.helperMaxLines,
     this.errorMaxLines,
   }) : super(key: key);
-  final EdgeInsets? padding;
-  final String? hintText;
-  final String? labelText;
-  final TextInputType? keyboardType;
-  final FloatingLabelBehavior? floatingLabelBehavior;
-  final bool? enableSuggestions;
-  final TextCapitalization? textCapitalization;
+
   final TextEditingController? controller;
+  final bool? enableSuggestions;
+  final int? errorMaxLines;
+  final FloatingLabelBehavior? floatingLabelBehavior;
+  final int? helperMaxLines;
+  final TextStyle? helperStyle;
+  final String? helperText;
+  final String? hintText;
+  final List<TextInputFormatter>? inputFormatters;
+  final Brightness? keyboardAppearance;
+  final TextInputType? keyboardType;
+  final String? labelText;
   final int? maxLength;
   final int? maxLines;
-  final TextInputAction? textInputAction;
-  final Brightness? keyboardAppearance;
-  final TextStyle? style;
-  final String? helperText;
-  final FormFieldValidator<String>? validator;
-  final TextStyle? helperStyle;
-  final Widget? suffixIcon;
   final bool? obscureText;
-  final List<TextInputFormatter>? inputFormatters;
-  final int? helperMaxLines;
-  final int? errorMaxLines;
+  final EdgeInsets? padding;
+  final TextStyle? style;
+  final Widget? suffixIcon;
+  final TextCapitalization? textCapitalization;
+  final TextInputAction? textInputAction;
+  final FormFieldValidator<String>? validator;
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  final defaultBorder = const OutlineInputBorder(
+  final defaultBorder = OutlineInputBorder(
     borderSide: BorderSide(
       color: AppColors.pinkOne,
       width: 1.4,

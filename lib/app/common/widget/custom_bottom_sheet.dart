@@ -38,7 +38,7 @@ Future<void> customModalBottomSheet(
                 horizontal: 32.0,
               ),
               child: Text(
-                textAlign: textAlign ?? TextAlign.start,
+                textAlign: textAlign ?? TextAlign.center,
                 content,
                 style: AppTextStyles.mediumText18.copyWith(
                   color: AppColors.pinkOne,
