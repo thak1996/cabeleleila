@@ -13,18 +13,13 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage>
+    with AutomaticKeepAliveClientMixin<ProfilePage> {
   SecureStorage secureStorage = const SecureStorage();
   final User user = FirebaseAuth.instance.currentUser!;
-  bool get wantKeepAlive => true;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _appBarCustom(),
-      body: _bodyProfileCustom(context),
-    );
-  }
+  bool get wantKeepAlive => true;
 
   Center _bodyProfileCustom(BuildContext context) {
     return Center(
@@ -49,7 +44,15 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  AppBarCustom _appBarCustom() => const AppBarCustom(
-        title: 'Perfil do Usuário',
-      );
+  AppBarCustom _appBarCustom() =>
+      const AppBarCustom(title: 'Perfil do Usuário');
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return Scaffold(
+      appBar: _appBarCustom(),
+      body: _bodyProfileCustom(context),
+    );
+  }
 }

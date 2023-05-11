@@ -8,6 +8,7 @@ class MultTextButton extends StatelessWidget {
     this.overlayColor,
     this.padding,
   }) : super(key: key);
+
   final List<Text> children;
   final VoidCallback onPressed;
   final MaterialStateProperty<Color>? overlayColor;

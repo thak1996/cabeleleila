@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 
 class UserCard extends StatelessWidget {
   const UserCard({Key? key, required this.user}) : super(key: key);
+
+  final User user;
+
   String _capitalize(String s) =>
       s.isNotEmpty ? '${s[0].toUpperCase()}${s.substring(1)}' : '';
-  final User user;
 
   @override
   Widget build(BuildContext context) {

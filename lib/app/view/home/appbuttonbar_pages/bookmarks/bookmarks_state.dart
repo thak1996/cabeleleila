@@ -7,6 +7,7 @@ class BookmarksStateLoading extends BookmarksState {}
 class BookmarksStateSucess extends BookmarksState {}
 
 class BookmarksStateError extends BookmarksState {
-  final String message;
   BookmarksStateError(this.message);
+
+  final String message;
 }

@@ -2,11 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class BookmarksModel {
-  final String id;
-  final DateTime date;
-  final TimeOfDay time;
-  final bool isConfirmed;
-
   BookmarksModel({
     required this.id,
     required this.date,
@@ -14,14 +9,8 @@ class BookmarksModel {
     this.isConfirmed = false,
   });
 
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'clientName': id,
-      'dateTime': date.toString(),
-      'time': '${time.hour}:${time.minute}',
-      'isConfirmed': isConfirmed,
-    };
-  }
+  factory BookmarksModel.fromJson(String source) =>
+      BookmarksModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   factory BookmarksModel.fromMap(Map<String, dynamic> map) {
     return BookmarksModel(
@@ -30,6 +19,20 @@ class BookmarksModel {
       time: TimeOfDay(hour: map['hour'], minute: map['minute']),
       isConfirmed: map['isConfirmed'] as bool,
     );
+  }
+
+  final DateTime date;
+  final String id;
+  final bool isConfirmed;
+  final TimeOfDay time;
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'clientName': id,
+      'dateTime': date.toString(),
+      'time': '${time.hour}:${time.minute}',
+      'isConfirmed': isConfirmed,
+    };
   }
 
   String toJson() => json.encode(toMap());
@@ -58,7 +61,4 @@ class BookmarksModel {
     final minute = int.parse(parts[1]);
     return TimeOfDay(hour: hour, minute: minute);
   }
-
-  factory BookmarksModel.fromJson(String source) =>
-      BookmarksModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

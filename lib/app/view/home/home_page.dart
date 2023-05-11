@@ -11,8 +11,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin<HomePage> {
-  @override
-  bool get wantKeepAlive => true;
   final List<SalonService> services = [
     SalonService(
       name: 'Corte de cabelo',
@@ -70,13 +68,7 @@ class _HomePageState extends State<HomePage>
   ];
 
   @override
-  Widget build(BuildContext context) {
-    super.build(context);
-    return Scaffold(
-      appBar: _appBarHome(),
-      body: _bodyHome(),
-    );
-  }
+  bool get wantKeepAlive => true;
 
   AppBarCustom _appBarHome() => const AppBarCustom(
         title: 'Serviços Disponíveis',
@@ -89,6 +81,15 @@ class _HomePageState extends State<HomePage>
         final service = services[index];
         return SalonServiceCard(service: service);
       },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return Scaffold(
+      appBar: _appBarHome(),
+      body: _bodyHome(),
     );
   }
 }

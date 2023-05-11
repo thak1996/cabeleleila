@@ -9,6 +9,24 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
+  static const TextStyle inputHintText = TextStyle(
+    fontFamily: 'AlegreyaSans',
+    fontSize: 12.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle inputLabelText = TextStyle(
+    fontFamily: 'AlegreyaSans',
+    fontSize: 14.0,
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle inputText = TextStyle(
+    fontFamily: 'AlegreyaSans',
+    fontSize: 14.0,
+    fontWeight: FontWeight.w500,
+  );
+
   static const TextStyle mediumText = TextStyle(
     fontFamily: 'AlegreyaSans',
     fontSize: 36.0,
@@ -27,15 +45,15 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
-  static const TextStyle mediumText22 = TextStyle(
-    fontFamily: 'AlegreyaSans',
-    fontSize: 22.0,
-    fontWeight: FontWeight.w600,
-  );
-
   static const TextStyle mediumText20 = TextStyle(
     fontFamily: 'AlegreyaSans',
     fontSize: 20.0,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const TextStyle mediumText22 = TextStyle(
+    fontFamily: 'AlegreyaSans',
+    fontSize: 22.0,
     fontWeight: FontWeight.w600,
   );
 
@@ -43,23 +61,5 @@ class AppTextStyles {
     fontFamily: 'AlegreyaSans',
     fontSize: 14.0,
     fontWeight: FontWeight.w500,
-  );
-
-  static const TextStyle inputLabelText = TextStyle(
-    fontFamily: 'AlegreyaSans',
-    fontSize: 14.0,
-    fontWeight: FontWeight.w400,
-  );
-
-  static const TextStyle inputText = TextStyle(
-    fontFamily: 'AlegreyaSans',
-    fontSize: 14.0,
-    fontWeight: FontWeight.w500,
-  );
-
-  static const TextStyle inputHintText = TextStyle(
-    fontFamily: 'AlegreyaSans',
-    fontSize: 12.0,
-    fontWeight: FontWeight.w400,
   );
 }

@@ -2,14 +2,14 @@ import 'package:cabeleleila/app/common/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  final void Function()? onPressed;
-  final String text;
-
   const CustomElevatedButton({
     super.key,
     required this.text,
     required this.onPressed,
   });
+
+  final void Function()? onPressed;
+  final String text;
 
   @override
   Widget build(BuildContext context) {

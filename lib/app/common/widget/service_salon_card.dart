@@ -8,15 +8,16 @@ class SalonService {
     required this.description,
     required this.price,
   });
-  final String name;
+
   final String description;
+  final String name;
   final double price;
 }
 
 class SalonServiceCard extends StatelessWidget {
-  final SalonService service;
-
   const SalonServiceCard({super.key, required this.service});
+
+  final SalonService service;
 
   @override
   Widget build(BuildContext context) {

@@ -8,11 +8,13 @@ class AppBarCustom extends StatefulWidget implements PreferredSizeWidget {
     required this.title,
     this.style,
   }) : super(key: key);
-  final String title;
+
   final TextStyle? style;
+  final String title;
 
   @override
   State<AppBarCustom> createState() => _AppBarCustomState();
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

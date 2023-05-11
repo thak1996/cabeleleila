@@ -9,10 +9,12 @@ class PrimaryButton extends StatelessWidget {
     this.padding,
     required this.text,
   }) : super(key: key);
-  final BorderRadius _borderRadius = BorderRadius.circular(48);
+
   final VoidCallback? onPressed;
-  final String text;
   final EdgeInsetsGeometry? padding;
+  final String text;
+
+  final BorderRadius _borderRadius = BorderRadius.circular(48);
 
   @override
   Widget build(BuildContext context) {
