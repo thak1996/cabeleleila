@@ -130,7 +130,7 @@ Form _bodySingUp({
           keyboardType: TextInputType.visiblePassword,
           hintText: '***********',
           validator: Validator.validatePassword,
-          textInputAction: TextInputAction.next,
+          textInputAction: TextInputAction.done,
           helperText:
               'Deve ter pelo menos 8 caracteres, 1 letra maiúscula e 1 número.',
         ),
